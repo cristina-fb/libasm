@@ -3,16 +3,15 @@ section .text
     extern ft_strlen
 
 ft_strcpy:
-    MOV r12,rdi
-    MOV r13,rsi
+    MOV rax,0
+    MOV r14,rdi
+    MOV rdx,rsi
     MOV rdi,rsi
     call ft_strlen
     MOV rcx,rax
-    MOV rsi,r13
-    MOV rdi,r12
+    MOV rsi,rdx
+    MOV rdi,r14
     REP MOVSB
     MOV byte [rdi],0
-    MOV rax,r12
+    MOV rax,r14
     ret
-
-    

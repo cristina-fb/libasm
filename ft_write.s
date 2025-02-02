@@ -5,12 +5,13 @@ section .text
 ft_write:
     MOV rax,1
     syscall
-    jc error
+    CMP rax,0
+    jl error
     ret
 
 error:
-    MOV r12,rax
-    call __errno_location
-    MOV [rax],r12
-    MOV rax,r12
+    MOV rdx,rax
+    call __errno_location wrt ..plt
+    MOV [rax],rdx
+    MOV rax,-1
     ret
