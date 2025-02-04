@@ -19,4 +19,15 @@ loop:
 
 exit:
     SUB rax,rdx
+    CMP rax,0
+    jl neg
+    jg pos
+    ret
+
+neg:
+    MOV rax,-1
+    ret
+
+pos:
+    MOV rax,1
     ret

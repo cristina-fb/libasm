@@ -56,16 +56,16 @@ int main(void)
     printf("strcmp res: %d\n", strcmp("Hello","Hello"));
     printf("ft_strcmp res: %d\n", ft_strcmp("Hello","Hello"));
 
-    printf("strcmp res: %d\n", strcmp("Hello","Hell!"));
+    printf("\nstrcmp res: %d\n", strcmp("Hello","Hell!"));
     printf("ft_strcmp res: %d\n", ft_strcmp("Hello","Hell!"));
 
-    printf("strcmp res: %d\n", strcmp("Hello","He"));
+    printf("\nstrcmp res: %d\n", strcmp("Hello","He"));
     printf("ft_strcmp res: %d\n", ft_strcmp("Hello","He"));
 
-    printf("strcmp res: %d\n", strcmp("Hell000000000","Hello"));
+    printf("\nstrcmp res: %d\n", strcmp("Hell000000000","Hello"));
     printf("ft_strcmp res: %d\n", ft_strcmp("Hell000000000","Hello"));
 
-    printf("strcmp res: %d\n", strcmp("",""));
+    printf("\nstrcmp res: %d\n", strcmp("",""));
     printf("ft_strcmp res: %d\n", ft_strcmp("",""));
 
     printf("----------------------WRITE----------------------\n");
@@ -74,22 +74,22 @@ int main(void)
     printf("ft_write:\n");
     printf(" ||| N: %ld\n", ft_write(1, "HOLACARACOLA", 5));
     printf("\nwrite:\n");
-    printf(" ||| N: %ld\n", write(1, "HOLACARACOLA", 25));
+    printf(" ||| N: %ld\n", write(1, "HOLACARACOLA", 13));
     printf("ft_write:\n");
-    printf(" ||| N: %ld\n", ft_write(1, "HOLACARACOLA", 25));
+    printf(" ||| N: %ld\n", ft_write(1, "HOLACARACOLA", 13));
     printf("\nwrite:\n");
     printf(" ||| N: %ld\n", write(1, "HOLACARACOLA", 0));
     printf("ft_write:\n");
     printf(" ||| N: %ld\n", ft_write(1, "HOLACARACOLA", 0));
 
     int fdw = open("test.txt", O_WRONLY);
-    printf("\nFile write ||| N: %ld ||| errno: %d\n", write(fdw, "HOLACARACOLA ", 13), errno);
-    printf("File ft_write ||| N: %ld ||| errno: %d\n", ft_write(fdw, "HOLACARACOLA ", 13), errno);
+    printf("\nFile write ||| N: %ld\n", write(fdw, "HOLACARACOLA ", 13));
+    printf("File ft_write ||| N: %ld\n", ft_write(fdw, "HOLACARACOLA ", 13));
     close(fdw);
 
     fdw = open("teshgjgjgjt.txt", O_WRONLY);
-    printf("\nNon existing file write ||| N: %ld ||| errno: %d\n", write(fdw, "HOLACARACOLA ", 13), errno);
-    printf("Non existing file ft_write ||| N: %ld ||| errno: %d\n", ft_write(fdw, "HOLACARACOLA ", 13), errno);
+    printf("\nNon existing file write ||| N: %ld \n", write(fdw, "HOLACARACOLA ", 13));
+    printf("Non existing file ft_write ||| N: %ld \n", ft_write(fdw, "HOLACARACOLA ", 13));
 
     printf("----------------------STRDUP----------------------\n");
     
@@ -126,8 +126,8 @@ int main(void)
     close(fdr);
 
     fdr = open("sdfkjlaskdj", O_RDONLY);
-    printf("\nN: %ld||| Errno: %d\n", read(fdr, &str, 5), errno);
-    printf("N: %ld||| Errno: %d\n", ft_read(fdr, &str2, 5), errno);
+    printf("\nN: %ld\n", read(fdr, &str, 5));
+    printf("N: %ld\n", ft_read(fdr, &str2, 5));
 
     return(0);
 }

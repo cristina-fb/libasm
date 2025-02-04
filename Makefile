@@ -2,8 +2,7 @@ CC = gcc
 
 NAME = libasm.a
 
-CFLAGS = -Wall -Werror -Wextra
-
+CFLAGS = 
 MAIN = main.c
 
 TEST = test
@@ -18,10 +17,11 @@ SRC = ft_strlen.s \
 OBJ = $(SRC:.s=.o)
 OBJ_TEST = $(MAIN:.c=.o)
 
-$(NAME): $(OBJ)
-	ar -r $(NAME) $(OBJ)
 
 all: $(TEST)
+
+$(NAME): $(OBJ)
+	ar -r $(NAME) $(OBJ)
 
 $(TEST): $(NAME)
 	$(CC) $(CFLAGS) $(OBJ) $(MAIN) -o $(TEST)
